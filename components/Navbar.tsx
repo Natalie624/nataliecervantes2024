@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import { Socials } from '@/constants'
 import Link from 'next/link'
 
 const Navbar = () => {
