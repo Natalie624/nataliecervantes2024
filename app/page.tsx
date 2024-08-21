@@ -37,13 +37,13 @@ export default function Home() {
               <div className="absolute rounded-[20px] z-[1] bg-white inset-0 opacity-0 group-hover:opacity-20" />
               Blogs
             </Link>
-            <Link
-              href="/contact-me"
+            <a
+              href="mailto:natalie.cervantes@gmail.com"
               className="rounded-[20px] group relative bg-blue-500 hover:bg-blue-400 px-5 py-3 text-lg text-white max-w-[200px]"
             >
               <div className="absolute rounded-[20px] z-[1] bg-white inset-0 opacity-0 group-hover:opacity-20" />
               Contact Me
-            </Link>
+            </a>
           </div>
         </div>
       </div>
