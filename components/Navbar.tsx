@@ -21,15 +21,15 @@ const Navbar = () => {
                 
             </div>
             {/*update this text to your site name*/}
-            <h1 className="text-white text-[25px] font-semibold">Webchain{" "}
+            <h1 className="text-white text-[25px] font-semibold">Natalie&apos;s{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
                     {" "} 
-                    Dev{" "}
+                    Blog{" "}
                 </span>
             </h1>
         </div>
         
-
+        {/* NavLinks should go here. Add Navigation component between this  d iv. */}
         <div className="flex flex-row gap-5 mb-2">
             <a href='https://www.linkedin.com/in/nataliecervantes/'>
                 <Image
@@ -49,8 +49,6 @@ const Navbar = () => {
                     height={28}
                 />
             </a>
-                
-
         </div>    
     </div>
   )
