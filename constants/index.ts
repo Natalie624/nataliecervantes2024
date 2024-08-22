@@ -117,9 +117,4 @@ export const NavLinks = [
     icon: RxDashboard,
     link: "/blogs",
   },
-  {
-    name: "/contact-me",
-    icon: RxClipboard,
-    link: "/contact-me",
-  },
 ];

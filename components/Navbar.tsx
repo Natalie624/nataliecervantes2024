@@ -1,10 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Navigation from './Navigation'
 
 const Navbar = () => {
   return (
-    <div className="fixed top-0 z-[50] w-full h-[100px] bg-transparent flex justify-between items-center px-10 md:px-20">
+    <div className="fixed top-0 z-[50] w-full h-[100px] bg-transparent flex  items-center px-10 md:px-20">
         <div className="flex flex-row gap-3 items-center">
             <div className='relative w-[28px] h-[28px]'>
                 <Link
@@ -20,7 +21,6 @@ const Navbar = () => {
                 </Link>
                 
             </div>
-            {/*update this text to your site name*/}
             <h1 className="text-white text-[25px] font-semibold">Natalie&apos;s{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
                     {" "} 
@@ -30,26 +30,12 @@ const Navbar = () => {
         </div>
         
         {/* NavLinks should go here. Add Navigation component between this  d iv. */}
-        <div className="flex flex-row gap-5 mb-2">
-            <a href='https://www.linkedin.com/in/nataliecervantes/'>
-                <Image
-                    key="LinkedIn"
-                    src="/LinkedIn_icon.svg"
-                    alt="LinkedIn"
-                    width={28}
-                    height={28}
-                />
-            </a>
-            <a href='https://github.com/Natalie624'>
-                <Image
-                    key="Github"
-                    src="github-mark-white.svg"
-                    alt="Github"
-                    width={28}
-                    height={28}
-                />
-            </a>
-        </div>    
+       <div style={{right: "5%"}}
+        className="flex flex-row gap-3 items-center  w-[28px] h-[28px] bg-transparent px-10 md:px-20">
+        
+            <Navigation />
+        </div>
+         
     </div>
   )
 }
