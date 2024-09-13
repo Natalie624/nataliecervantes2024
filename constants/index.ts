@@ -33,8 +33,8 @@ export const SkillData = [
     height: 80,
   },
   {
-    name: "Redux",
-    Image: "/redux.png",
+    name: "GraphQL",
+    Image: "/graphql.svg",
     width: 80,
     height: 80,
   },
@@ -52,14 +52,14 @@ export const SkillData = [
     height: 80,
   },
   {
-    name: "Framer Motion",
-    Image: "/framer.png",
+    name: "Netlify",
+    Image: "/Netlify.svg",
     width: 80,
     height: 80,
   },
   {
-    name: "Stripe Payment",
-    Image: "/stripe.webp",
+    name: "PostgreSQL",
+    Image: "/postgresql.svg",
     width: 80,
     height: 80,
   },
@@ -70,10 +70,10 @@ export const SkillData = [
     height: 80,
   },
   {
-    name: "Mongo db",
-    Image: "/mongodb.png",
-    width: 40,
-    height: 40,
+    name: "Contentful",
+    Image: "/contentful.svg",
+    width: 65,
+    height: 65,
   },
 ];
 
