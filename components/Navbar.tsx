@@ -19,23 +19,20 @@ const Navbar = () => {
                     className="w-full h-full object-contain rounded-full"
                 />
                 </Link>
-                
             </div>
-            <h1 className="text-white text-[25px] font-semibold">Natalie&apos;s{" "}
+            <h1 className="text-white text-[25px] font-semibold"> Natalie{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-                    {" "} 
-                    Blog{" "}
+                     C.{" "}
                 </span>
             </h1>
         </div>
-        
-        {/* NavLinks should go here. Add Navigation component between this  d iv. */}
+
        <div style={{right: "5%"}}
-        className="flex flex-row gap-3 items-center  w-[28px] h-[28px] bg-transparent px-10 md:px-20">
-        
-            <Navigation />
+        className="flex flex-row gap-3 items-center  w-[28px] h-[28px] bg-transparent px-10 md:px-20"
+        >
+         <Navigation />
         </div>
-         
+        
     </div>
   )
 }
