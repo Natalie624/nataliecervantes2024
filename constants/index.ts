@@ -75,6 +75,12 @@ export const SkillData = [
     width: 65,
     height: 65,
   },
+  {
+    name: "MySQL",
+    Image: "/mysql.png",
+    width: 80,
+    height: 80,
+  },
 ];
 
 //change the below to Blogs data
