@@ -17,6 +17,8 @@ const TransitionVariants = {
     },
 };
 
+// below in the motion.divs to the className add as a gradient of dark purple/ purple, purple/blue, blue
+// see how you did it in the navbar:  bg-gradient-to-r from-purple-500 to-cyan-500 but instead it would be bg-gradient-to-t?
 const Transition = () => {
     return (
     <div>
