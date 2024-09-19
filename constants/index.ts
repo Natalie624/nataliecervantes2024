@@ -1,4 +1,4 @@
-import { RxHome, RxPerson, RxDashboard, RxClipboard } from "react-icons/rx";
+import { RxHome, RxPerson, RxDashboard, RxTimer } from "react-icons/rx";
 //see https://react-icons.github.io/react-icons/icons/rx/ for all icons
 
 export const SkillData = [
@@ -141,5 +141,10 @@ export const NavLinks = [
     name: "/blogs",
     icon: RxDashboard,
     link: "/blogs",
+  },
+  {
+    name: "/blogs/archive",
+    icon: RxTimer,
+    link: "/blogs/archive",
   },
 ];
