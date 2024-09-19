@@ -7,14 +7,12 @@ export default function Home() {
       <div
         className="flex items-center w-full h-full bg-cover bg-center bg-violet-950"
       >
-
         {/* Content */}
         <div className="pl-8 pr-8 md:pl-40 pb-56 md:pb-20 flex flex-col gap-5 z-[10] max-w-[750px]">
           <h1 className="text-[40px] md:text-[50px] text-white font-semibold">
-            Creative Solutions With
+            Creative Enterprise
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              {" "}
-              Web Development
+              {" "} Web Solutions
             </span>
           </h1>
           <p className="text-gray-200 md:block">
@@ -46,7 +44,7 @@ export default function Home() {
       </div>
 
       {/* mobile view */}
-      <div className="absolute flex bottom-10 z-[20] right-5 flex-col md:hidden gap-5">
+      <div className="absolute flex bottom-10 translate-y-[-60px] z-[20] right-5 flex-col md:hidden gap-5">
         <Link
           href="/my-skills"
           className="rounded-[20px] group bg-blue-500 px-5 py-3 text-lg text-white max-w-[200px]"
@@ -66,15 +64,13 @@ export default function Home() {
           Contact Me
         </Link>
       </div>
-
-      {/* can replace the below image for personal portfolio with prof photo */}
-      <div className="absolute bottom-40 left-5 md:bottom-10 md:right-5 md:left-auto z-[15]">
+      <div className="absolute bottom-40 left-5 md:bottom-20 md:right-10 md:left-auto z-[15]">
         <Image
           src="/natalie.png"
           alt="natalie"
           width={480}
           height={480}
-          className="max-w-[240px] md:max-w-[480px]"
+          className="max-w-[200px] md:max-w-[480px]"
         />
       </div>
     </main>
