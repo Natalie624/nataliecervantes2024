@@ -1,4 +1,4 @@
-import { RxHome, RxPerson, RxDashboard, RxClipboard } from "react-icons/rx";
+import { RxHome, RxPerson, RxDashboard, RxTimer } from "react-icons/rx";
 //see https://react-icons.github.io/react-icons/icons/rx/ for all icons
 
 export const SkillData = [
@@ -111,6 +111,21 @@ export const Blogs = [
   }
 ];
 
+export const Archive = [
+  {
+    title: "Archive Blog Placeholder One",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    src: "/NextWebsite.png",
+    slug: 1,
+  },
+  {
+    title: "Archive Blog Placeholder Two",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    src: "/SpaceWebsite.png",
+    slug: 2,
+  },
+]
+
 export const NavLinks = [
   {
     name: "/",
@@ -126,5 +141,10 @@ export const NavLinks = [
     name: "/blogs",
     icon: RxDashboard,
     link: "/blogs",
+  },
+  {
+    name: "/blogs/archive",
+    icon: RxTimer,
+    link: "/blogs/archive",
   },
 ];
