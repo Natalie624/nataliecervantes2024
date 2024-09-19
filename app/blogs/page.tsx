@@ -16,6 +16,7 @@ const page = () => {
           </Link>
         ))}
       </div>
+      <Link href="/blogs/archive" className="absolute justify-center bottom-20 text-white text-2xl">View Archive</Link>
       {/* add link to archive blog page for all other blogs */}
       
     </div>
