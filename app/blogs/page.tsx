@@ -1,4 +1,4 @@
-// This is the main blog card page for featured blog posts
+// This is the featured blog posts page with cards highlighting new blog posts
 
 import BlogCard from '@/components/BlogCard'
 import { getNewestBlogPosts } from '../utils/contentful'
@@ -19,7 +19,7 @@ const page = async () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[90%] max-h-[90%]">
         {blogs.map((blog, index) => (
           <div key={index}>
-          <Link href={`/blogs/${blog.blogSlug}`}> 
+          <Link href={`/blogs/${blog.slug}`}> 
             <BlogCard image={blog.image} title={blog.blogTitle}/>
           </Link>
           </div>
