@@ -11,7 +11,7 @@ import { createClient, Entry, Asset, EntrySkeletonType } from 'contentful';
 interface BlogPostFields extends EntrySkeletonType {
     fields: {
         blogTitle: string;
-        blogSlug: string;
+        slug: string;
         image?: Asset;
     }
 }
@@ -26,7 +26,7 @@ export const getNewestBlogPosts = async () => {
 });
  
 const recentPosts = results.items.map((blog: Entry<BlogPostFields>) => {
-    const { blogTitle, blogSlug, image} = blog.fields;
+    const { blogTitle, slug, image} = blog.fields;
 
     const imageUrl = image?.fields?.file?.url ? `https:${image.fields.file.url}`  : ''; // Get image URL if available
     if (imageUrl === '') {
@@ -34,7 +34,7 @@ const recentPosts = results.items.map((blog: Entry<BlogPostFields>) => {
     }
     return {
         blogTitle: String(blogTitle),
-        blogSlug,
+        slug,
         image: imageUrl,
     }
     
