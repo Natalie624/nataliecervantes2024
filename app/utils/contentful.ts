@@ -16,6 +16,32 @@ interface BlogPostFields extends EntrySkeletonType {
     }
 }
 
+// Get 4 newest blog posts here and use in the main blog page "Featured Blogs"
+export const getNewestBlogPosts = async () => {
+    const results = await client.getEntries<BlogPostFields>({
+      content_type: 'blogPost',
+      order: ['-sys.createdAt'], // Order by creation date, descending
+      limit: 4, // Limit to top 4 entries
+      include: 1, // Include linked assets (images)
+});
+ 
+const recentPosts = results.items.map((blog: Entry<BlogPostFields>) => {
+    const { blogTitle, blogSlug, image} = blog.fields;
+
+    const imageUrl = image?.fields?.file?.url ? `https:${image.fields.file.url}`  : ''; // Get image URL if available
+    if (imageUrl === '') {
+        throw new Error('No image URL found');
+    }
+    return {
+        blogTitle: String(blogTitle),
+        blogSlug,
+        image: imageUrl,
+    }
+    
+});
+return recentPosts;
+};
+
 export const createContentClient = () => {
     if (!process.env.CONTENTFUL_SPACE_ID || !process.env.CONTENTFUL_ACCESS_TOKEN) {
     throw new Error('Missing Contentful environment variables');
@@ -34,27 +60,6 @@ export const getEntriesByType = async (type: string) => {
   });
 
   return response.items;
-};
-
-// Get 4 newest blog posts here and use in the main blog page "Featured Blogs"
-export const getNewestBlogPosts = async () => {
-    const results = await client.getEntries<BlogPostFields>({
-      content_type: 'blogPost',
-      order: ['-sys.createdAt'], // Order by creation date, descending
-      limit: 4, // Limit to top 4 entries
-      include: 1, // Include linked assets (images)
-});
- 
-const recentPosts = results.items.map((blog: Entry<BlogPostFields>) => {
-    const { blogTitle, blogSlug, image } = blog.fields;
-    const imageUrl = image ? `https:${image.url}` : ''; // Get image URL if available
-    return {
-        blogTitle: String(blogTitle),
-        blogSlug,
-        image: imageUrl,
-    }
-});
-return recentPosts;
 };
 
 export const getBlogPosts = async () => {
