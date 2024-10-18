@@ -1,3 +1,4 @@
+// This is the previous post listing page or archive page for links to previous blog posts
 import Link from 'next/link'
 import React from 'react'
 import { Archive } from '@/constants'

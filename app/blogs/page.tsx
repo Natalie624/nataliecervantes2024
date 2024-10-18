@@ -1,9 +1,13 @@
+// This is the main blog card page for featured blog posts
+
 import BlogCard from '@/components/BlogCard'
-import { Blogs } from '@/constants'
+import { getNewestBlogPosts } from '../utils/contentful'
 import Link from 'next/link'
 import React from 'react'
 
-const page = () => {
+const page = async () => {
+  const blogs = await getNewestBlogPosts()
+
   return (
     <div className="w-screen h-screen  bg-center bg-cover bg-violet-950">
       <div className="flex flex-col items-center pt-8">
@@ -13,10 +17,12 @@ const page = () => {
       {/* The below div houses all the blog cards for featured blogs or top 4 newest. May want to refactor based on date to map */}
       <div className="flex items-center justify-center">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[90%] max-h-[90%]">
-        {Blogs.map((blog, index) => (
-          <Link href={`/blogs/${blog.slug}`} key={index}>
-            <BlogCard key={index} image={blog.src} title={blog.title} text={blog.text} />
+        {blogs.map((blog, index) => (
+          <div key={index}>
+          <Link href={`/blogs/${blog.blogSlug}`}> 
+            <BlogCard image={blog.image} title={blog.blogTitle}/>
           </Link>
+          </div>
         ))}
       </div>
       </div>
