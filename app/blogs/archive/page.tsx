@@ -7,7 +7,7 @@ const BlogArchive = () => {
   return (
     <div className='w-screen h-screen flex flex-col items-center bg-center bg-cover bg-violet-950'>
        <div className="flex flex-col items-center pt-20 pb-10">
-          <h1 className="text-[18px] md:text-[50px] text-white font-semibold mt-20">
+          <h1 className="text-[40px] md:text-[50px] text-white font-semibold mt-20">
           Previous Articles
           </h1>
         </div>
