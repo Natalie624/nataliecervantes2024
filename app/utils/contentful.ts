@@ -7,6 +7,18 @@
 
 import { createClient, Entry, Asset, EntrySkeletonType } from 'contentful';
 
+export const createContentClient = () => {
+  if (!process.env.CONTENTFUL_SPACE_ID || !process.env.CONTENTFUL_ACCESS_TOKEN) {
+  throw new Error('Missing Contentful environment variables');
+}
+return createClient({
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+});
+};
+
+const client = createContentClient();
+
 // BlogPostFields must be structured based on the expected fields of Contentful entries
 interface BlogPostFields extends EntrySkeletonType {
     fields: {
@@ -42,17 +54,20 @@ const recentPosts = results.items.map((blog: Entry<BlogPostFields>) => {
 return recentPosts;
 };
 
-export const createContentClient = () => {
-    if (!process.env.CONTENTFUL_SPACE_ID || !process.env.CONTENTFUL_ACCESS_TOKEN) {
-    throw new Error('Missing Contentful environment variables');
-  }
-  return createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
-};
+export const getEntryBySlug = async (slug: string, type: string) => {
+  const queryOptions = {
+    content_type: type,
+    include: 1, // Include linked assets (images)
+    'fields.slug[match]': slug,
+  };
 
-const client = createContentClient();
+  const queryResult = await client.getEntries(queryOptions);
+  if (queryResult.items.length > 0) {
+    return queryResult.items
+  } else {
+    throw new Error(`No entries found for slug: ${slug}`);
+  }
+};
 
 export const getEntriesByType = async (type: string) => {
   const response = await client.getEntries({
@@ -66,18 +81,4 @@ export const getBlogPosts = async () => {
   const results = await getEntriesByType('blogPost');
   const blogPosts = results.map((blog: Entry<any>) => blog.fields);
   return blogPosts;
-};
-
-export const getEntryBySlug = async (slug: string, type: string) => {
-  const queryOptions = {
-    content_type: type,
-    'fields.slug[match]': slug,
-  };
-
-  const queryResult = await client.getEntries(queryOptions);
-  if (queryResult.items.length > 0) {
-    return queryResult.items
-  } else {
-    throw new Error(`No entries found for slug: ${slug}`);
-  }
 };

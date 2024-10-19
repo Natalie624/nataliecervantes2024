@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import { getEntryBySlug } from '../../utils/contentful';
 import Image from 'next/image';
-import { BLOCKS, INLINES, Document } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES, MARKS,Document } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { EntrySkeletonType } from 'contentful';
 
@@ -67,18 +67,30 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
   // Keeping this here as I may want to implement it one day. Note if I do add options to {documentToReactComponents(bodyContent)} as
   // {documentToReactComponents(bodyContent, options)}
 
-  /*const options = {
+  const options = {
     renderMark: {
-      [INLINES.BOLD]: (text) => <b>{text}</b>,
-      [INLINES.ITALIC]: (text) => <i>{text}</i>,
+      [MARKS.BOLD]: (text: string) => <b>{text}</b>,
+      [MARKS.ITALIC]: (text: string) => <i>{text}</i>,
     },
     renderNode: {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const { blogTitle, file } = node.data.target.fields;
+        const imageUrl = `https:${file.url}`;
+        const altText = blogTitle || "Embedded asset";
+        return (
+          <Image
+            src={imageUrl}
+            alt={altText}
+            width={500}
+            height={500}
+          />
+        );
+      },
       [BLOCKS.HEADING_1]: (node, children) => <h1>{children}</h1>, 
       [BLOCKS.HEADING_2]: (node, children) => <h2>{children}</h2>,
       [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
     },
   };
-  */
 
   return (
     <div className="w-screen h-screen flex flex-col items-center bg-violet-950 p-8 md:p-60 overflow-y-auto">
@@ -90,7 +102,7 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
               width={500}
               height={500}
               className="mt-14 mb-8 md:mt-20 md:mb-14"/>}
-        <div className="pr-4 pl-4 mb-10 md:pl-40 md:pr-40 prose text-white font-family-inter">{documentToReactComponents(bodyContent)}</div>
+        <div className="pr-4 pl-4 mb-10 md:pl-40 md:pr-40 prose text-white font-family-inter">{documentToReactComponents(bodyContent, options)}</div>
         {/* TODO: created teh associated posts URL as a seperate component and then import here to render */}
         {/*{associatedPostsUrl && <div className="pt-4 text-left text-[14px] md:text-[24px] text-blue-500">{associatedPostsUrl}</div>}*/}
     </div>
