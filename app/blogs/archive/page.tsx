@@ -2,7 +2,6 @@
 import Link from 'next/link'
 import React from 'react'
 import { getBlogPosts } from '../../utils/contentful'
-//import { Archive } from '@/constants'
 
 const BlogArchive = async () => {
   const blogs = await getBlogPosts();
