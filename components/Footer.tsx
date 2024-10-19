@@ -20,8 +20,9 @@ const Footer = () => {
                             key="Github"
                             src="github-mark-white.svg"
                             alt="Github"
-                            width={28}
-                            height={28}
+                            width={28} // Set desired width
+                            height={28} // Set height proportionally or same value for square
+                            className="max-w-[28px] max-h-auto"
                         />
                     </a>
                 </div>
