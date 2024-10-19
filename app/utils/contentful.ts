@@ -78,7 +78,18 @@ export const getEntriesByType = async (type: string) => {
 };
 
 export const getBlogPosts = async () => {
-  const results = await getEntriesByType('blogPost');
-  const blogPosts = results.map((blog: Entry<any>) => blog.fields);
-  return blogPosts;
+  const results = await client.getEntries<BlogPostFields>({
+    content_type: 'blogPost',
+    order: ['-sys.createdAt'], // Order by creation date, descending 
+  });
+
+  const blogPosts = results.items.map((blog: Entry<BlogPostFields>) => {
+    const { blogTitle, slug } = blog.fields;
+    
+    return {
+      blogTitle: String(blogTitle),
+      slug,
+    };
+  });
+return blogPosts;
 };
