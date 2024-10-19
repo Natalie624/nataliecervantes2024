@@ -88,9 +88,9 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
   */
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center bg-violet-950 p-8 overflow-y-auto">
+    <div className="w-screen flex flex-col items-center bg-violet-950 p-8 overflow-y-auto" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <h1 className="md:mt-14 mt-20 text-center text-[18px] md:text-[60px] text-white font-semibold font-family-inter">{blogTitle}</h1>
-        {subheader && <h2 className="pt-4 text-center text--[10px] md:text-[24px] text-gray-200 font-family-inter">{subheader}</h2>}
+        {subheader && <h2 className="pt-4 text-center text-[10px] md:text-[24px] text-gray-200 font-family-inter">{subheader}</h2>}
         {imageUrl && <Image 
               src={imageUrl} 
               alt={blogTitle} 
