@@ -64,13 +64,13 @@ export default function Home() {
           Contact Me
         </Link>
       </div>
-      <div className="absolute bottom-40 left-5 md:bottom-20 md:right-10 md:left-auto z-[15]">
+      <div className="absolute bottom-40 left-5 md:bottom-30 md:right-10 md:left-auto z-[15]">
         <Image
           src="/natalie.png"
           alt="natalie"
           width={480}
           height={480}
-          className="max-w-[200px] md:max-w-[480px]"
+          className="max-w-[180px] max-h-auto md:max-w-[420px] md:max-h-auto"
         />
       </div>
     </main>
