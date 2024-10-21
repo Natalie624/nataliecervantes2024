@@ -16,7 +16,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-gray-200 md:block">
-          Hi I&apos;m Natalie. I&apos;m an experienced enterprise web developer and engineering leader, with over 10 years of experience in delivering high-quality web solutions.
+          Hi I&apos;m Natalie. I&apos;m an experienced engineering leader and enterprise web developer, with over 10 years of experience in delivering high-quality web solutions.
           </p>
           <div className="flex-col md:flex-row hidden md:flex gap-5">
             <Link
@@ -30,7 +30,7 @@ export default function Home() {
               className="rounded-[20px] group relative bg-blue-500 hover:bg-blue-400 px-5 py-3 text-lg text-white max-w-[200px]"
             >
               <div className="absolute rounded-[20px] z-[1] bg-white inset-0 opacity-0 group-hover:opacity-20" />
-              Blogs
+              My Blog
             </Link>
             <a
               href="mailto:natalie.cervantes@gmail.com"
@@ -55,7 +55,7 @@ export default function Home() {
           href="/blogs"
           className="rounded-[20px] group bg-blue-500  px-5 py-3 text-lg text-white max-w-[200px]"
         >
-          Blogs
+          My Blog
         </Link>
         <Link
           href="/contact-me"
