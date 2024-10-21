@@ -44,7 +44,7 @@ export default function Home() {
       </div>
 
       {/* mobile view */}
-      <div className="absolute flex bottom-10 translate-y-[-60px] z-[20] right-5 flex-col md:hidden gap-5">
+      <div className="absolute flex bottom-32 translate-y-[-60px] z-[20] right-5 flex-col md:hidden gap-5">
         <Link
           href="/my-skills"
           className="rounded-[20px] group bg-blue-500 px-5 py-3 text-lg text-white max-w-[200px]"
@@ -64,7 +64,7 @@ export default function Home() {
           Contact Me
         </Link>
       </div>
-      <div className="absolute bottom-40 left-5 md:bottom-30 md:right-10 md:left-auto z-[15]">
+      <div className="absolute bottom-48 left-5 md:bottom-30 md:right-10 md:left-auto z-[15]">
         <Image
           src="/natalie.png"
           alt="natalie"
