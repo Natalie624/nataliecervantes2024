@@ -16,7 +16,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-gray-200 md:block">
-          Hi I&apos;m Natalie. I&apos;m an experienced engineering leader and enterprise web developer, with over 10 years of experience in delivering high-quality web solutions.
+          Hi I&apos;m Natalie. I&apos;m an experienced engineering leader and enterprise web developer, with over 10 years of war stories and feats of victory delivering high-quality web solutions.
           </p>
           <div className="flex-col md:flex-row hidden md:flex gap-5">
             <Link
