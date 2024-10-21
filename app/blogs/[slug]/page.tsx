@@ -1,12 +1,12 @@
 // This is the main blog post page template for all blog posts
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import { getEntryBySlug } from '../../utils/contentful';
 import Image from 'next/image';
 import { Node } from '@contentful/rich-text-types';
 import { BLOCKS, INLINES, MARKS,Document } from '@contentful/rich-text-types';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer';
 import { EntrySkeletonType } from 'contentful';
 
 interface BlogPostEntry extends EntrySkeletonType {
@@ -64,14 +64,11 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
 
   const {blogTitle, subheader, image, bodyContent, associatedPostsUrl} = blogPost;
   const imageUrl = image ? `https:${image.fields.file.url}` : ''; 
-  
-  // Keeping this here as I may want to implement it one day. Note if I do add options to {documentToReactComponents(bodyContent)} as
-  // {documentToReactComponents(bodyContent, options)}
 
-  const options = {
+  const options: Options = {
     renderMark: {
-      [MARKS.BOLD]: (text: string) => <b>{text}</b>,
-      [MARKS.ITALIC]: (text: string) => <i>{text}</i>,
+      [MARKS.BOLD]: (text: ReactNode) => <b>{text}</b>,
+      [MARKS.ITALIC]: (text: ReactNode) => <i>{text}</i>,
     },
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node: Node) => {
