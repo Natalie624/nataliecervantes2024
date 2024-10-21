@@ -4,6 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import { getEntryBySlug } from '../../utils/contentful';
 import Image from 'next/image';
+import { Node } from '@contentful/rich-text-types';
 import { BLOCKS, INLINES, MARKS,Document } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { EntrySkeletonType } from 'contentful';
@@ -33,7 +34,7 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
       try {
         const entries = await getEntryBySlug(slug, 'blogPost');
         if (entries.length > 0) {
-          const blogData = entries[0].fields as BlogPostEntry;
+          const blogData = entries[0].fields as unknown as BlogPostEntry;
           setBlogPost(blogData);
       }
     } catch (err: unknown){
@@ -73,7 +74,7 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
       [MARKS.ITALIC]: (text: string) => <i>{text}</i>,
     },
     renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      [BLOCKS.EMBEDDED_ASSET]: (node: Node) => {
         const { blogTitle, file } = node.data.target.fields;
         const imageUrl = `https:${file.url}`;
         const altText = blogTitle || "Embedded asset";
@@ -86,9 +87,9 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
           />
         );
       },
-      [BLOCKS.HEADING_1]: (node, children) => <h1>{children}</h1>, 
-      [BLOCKS.HEADING_2]: (node, children) => <h2>{children}</h2>,
-      [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+      [BLOCKS.HEADING_1]: (node: Node, children: React.ReactNode) => <h1>{children}</h1>, 
+      [BLOCKS.HEADING_2]: (node: Node, children: React.ReactNode) => <h2>{children}</h2>,
+      [BLOCKS.PARAGRAPH]: (node: Node, children: React.ReactNode) => <p>{children}</p>,
     },
   };
 
