@@ -21,7 +21,7 @@ const BlogCard = ({ image, title }: Props) => {
                 <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent text-white text-lg font-semibold">
                     {title}
                 </div>
-                {/* read more on */}
+                {/* read more */}
                 <div className="absolute inset-0 w-full h-full rounded-md bg-black opacity-0 group-hover:opacity-40" />
                 <div className="hidden md:block">
                     <div className="absolute inset-0 w-full h-full text-[20px] pb-10 hidden group-hover:flex items-center z-[20] justify-center">

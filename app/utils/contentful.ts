@@ -41,11 +41,13 @@ export const getNewestBlogPosts = async () => {
   const recentPosts = results.items.map((blog: Entry<BlogPostFields>) => {
     const { blogTitle, slug, image} = blog.fields;
 
+    // Custom type guard function 'isAsset' to ensure that image is valid Asset object and that it has the necessary fields and file properties.
+    // This type guard checks that if 'image' exits (is not null or undefined). If 'image' is an object. And if fields exists in image and  ontains a file field. 
     const isAsset = (img: unknown): img is Asset => {
-      return !!img && typeof img=== 'object' && 'fields' in img && 'file' in (img as Asset).fields;
+      return !!img && typeof img === 'object' && 'fields' in img && 'file' in (img as Asset).fields;
     }
     
-    const imageUrl = isAsset(image) ? `https:${image.fields.file?.url}`  : ''; // Get image URL if available
+    const imageUrl = isAsset(image) ? `https:${image.fields.file?.url}`  : ''; // After verifying 'image' is a valid Asset we safely access file.url
     
     if (!imageUrl) {
         throw new Error('No image URL found');
