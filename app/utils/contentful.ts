@@ -7,6 +7,7 @@
 
 import { createClient, Entry, Asset, EntrySkeletonType } from 'contentful';
 
+
 export const createContentClient = () => {
   if (!process.env.CONTENTFUL_SPACE_ID || !process.env.CONTENTFUL_ACCESS_TOKEN) {
   throw new Error('Missing Contentful environment variables');
@@ -35,23 +36,30 @@ export const getNewestBlogPosts = async () => {
       order: ['-sys.createdAt'], // Order by creation date, descending
       limit: 4, // Limit to top 4 entries
       include: 1, // Include linked assets (images)
-});
+  });
  
-const recentPosts = results.items.map((blog: Entry<BlogPostFields>) => {
+  const recentPosts = results.items.map((blog: Entry<BlogPostFields>) => {
     const { blogTitle, slug, image} = blog.fields;
 
-    const imageUrl = image?.fields?.file?.url ? `https:${image.fields.file.url}`  : ''; // Get image URL if available
-    if (imageUrl === '') {
-        throw new Error('No image URL found');
+    // Custom type guard function 'isAsset' to ensure that image is valid Asset object and that it has the necessary fields and file properties.
+    // This type guard checks that if 'image' exits (is not null or undefined). If 'image' is an object. And if fields exists in image and  ontains a file field. 
+    const isAsset = (img: unknown): img is Asset => {
+      return !!img && typeof img === 'object' && 'fields' in img && 'file' in (img as Asset).fields;
     }
-    return {
+    
+    const imageUrl = isAsset(image) ? `https:${image.fields.file?.url}`  : ''; // After verifying 'image' is a valid Asset we safely access file.url
+    
+    if (!imageUrl) {
+        throw new Error('No image URL found');
+      };
+
+      return {
         blogTitle: String(blogTitle),
         slug,
         image: imageUrl,
-    }
-    
-});
-return recentPosts;
+      }; 
+    });
+    return recentPosts;
 };
 
 export const getEntryBySlug = async (slug: string, type: string) => {

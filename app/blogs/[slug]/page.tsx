@@ -1,4 +1,4 @@
-// This is the main blog post page template for all blog posts
+// This is the main page template for all blog posts
 "use client";
 
 import React, { ReactNode, useEffect, useState } from 'react';
