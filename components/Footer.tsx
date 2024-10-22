@@ -26,9 +26,9 @@ const Footer = () => {
                         />
                     </a>
                 </div>
-            </div>
-            <div>
-                <p className="text-gray-400 text-[8px]">Site designed and developed by Natalie Cervantes</p>
+                <div>
+                    <p className="text-gray-400 text-[8px]">Site designed and developed by Natalie Cervantes</p>
+                </div>
             </div>    
         </div>
     )
