@@ -11,7 +11,7 @@ const page = async () => {
   return (
     <div className="w-screen h-screen  bg-center bg-cover bg-violet-950 overflow-y-auto">
       <div className="flex flex-col items-center pt-14 pb-2 md:pt-10 md:pb-4">
-        <h1 className="mt-12 pb-2 text-center text-[40px] md:text-[50px] text-white font-semibold">Featured Posts</h1>
+        <h1 className="mt-8 md:mt-12 pb-2 text-center text-[40px] md:text-[50px] text-white font-semibold">Featured Posts</h1>
       </div>
       
       {/* The below div houses all the blog cards for featured blogs or top 4 newest. May want to refactor based on date to map */}
