@@ -8,7 +8,6 @@ import { Node } from '@contentful/rich-text-types';
 import { BLOCKS, INLINES, MARKS,Document } from '@contentful/rich-text-types';
 import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer';
 import { EntrySkeletonType } from 'contentful';
-//import { LinkedinShare } from 'react-share-kit';
 import {
   LinkedinShareButton,
   LinkedinIcon,
@@ -110,7 +109,7 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
         {/* TODO: created teh associated posts URL as a seperate component and then import here to render */}
         {/*{associatedPostsUrl && <div className="pt-4 text-left text-[14px] md:text-[24px] text-blue-500">{associatedPostsUrl}</div>}*/}
           <div className="pt-4 text-[12px] md:text-[14px] text-white">If you enjoyed this post please share! {" "} {" "}
-            <LinkedinShareButton url={`http://localhost:3000/blogs/${slug}`}>
+            <LinkedinShareButton url={`https://nataliecervantes.netlify.app/blogs/${slug}`}>
               <LinkedinIcon size={32} round />
             </LinkedinShareButton>
           </div>
