@@ -8,6 +8,7 @@ import { Node } from '@contentful/rich-text-types';
 import { BLOCKS, INLINES, MARKS,Document } from '@contentful/rich-text-types';
 import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer';
 import { EntrySkeletonType } from 'contentful';
+import { LinkedinShare } from 'react-share-kit';
 
 interface BlogPostEntry extends EntrySkeletonType {
   blogTitle: string;
@@ -28,6 +29,7 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
   const [blogPost, setBlogPost] = useState<BlogPostEntry | null>(null);
   const [loading, setloading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const titleToShare = `Checkout this blog post by @nataliecervantes: ${blogPost?.blogTitle}`
 
   useEffect(() => {
     const fetchBlogPost = async () => {
@@ -103,6 +105,13 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
         <div className="pr-4 pl-4 mb-10 md:pl-40 md:pr-40 prose text-white font-family-inter">{documentToReactComponents(bodyContent, options)}</div>
         {/* TODO: created teh associated posts URL as a seperate component and then import here to render */}
         {/*{associatedPostsUrl && <div className="pt-4 text-left text-[14px] md:text-[24px] text-blue-500">{associatedPostsUrl}</div>}*/}
+        <LinkedinShare
+          title={titleToShare}
+          url={`http://localhost:3000/blogs/${slug}`}
+          windowWidth={750}
+          windowHeight={600}
+          className="pt-4 text-left text-[14px] md:text-[24px] text-blue-500"
+        />
     </div>
   )
 }
