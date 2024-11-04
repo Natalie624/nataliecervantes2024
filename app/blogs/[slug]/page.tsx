@@ -8,6 +8,10 @@ import { Node } from '@contentful/rich-text-types';
 import { BLOCKS, INLINES, MARKS,Document } from '@contentful/rich-text-types';
 import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer';
 import { EntrySkeletonType } from 'contentful';
+import {
+  LinkedinShareButton,
+  LinkedinIcon,
+} from 'next-share';
 
 interface BlogPostEntry extends EntrySkeletonType {
   blogTitle: string;
@@ -28,6 +32,7 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
   const [blogPost, setBlogPost] = useState<BlogPostEntry | null>(null);
   const [loading, setloading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const titleToShare = `Checkout this blog post by @nataliecervantes: ${blogPost?.blogTitle}`
 
   useEffect(() => {
     const fetchBlogPost = async () => {
@@ -100,9 +105,15 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
               width={500}
               height={500}
               className="mt-14 mb-8 md:mt-20 md:mb-14"/>}
-        <div className="pr-4 pl-4 mb-10 md:pl-40 md:pr-40 prose text-white font-family-inter">{documentToReactComponents(bodyContent, options)}</div>
+        <div className="pr-4 pl-4 mb-8 md:pl-40 md:pr-40 prose text-white font-family-inter">{documentToReactComponents(bodyContent, options)}
         {/* TODO: created teh associated posts URL as a seperate component and then import here to render */}
         {/*{associatedPostsUrl && <div className="pt-4 text-left text-[14px] md:text-[24px] text-blue-500">{associatedPostsUrl}</div>}*/}
+          <div className="pt-4 text-[12px] md:text-[14px] text-white">If you enjoyed this post please share! {" "} {" "}
+            <LinkedinShareButton url={`https://nataliecervantes.netlify.app/blogs/${slug}`}>
+              <LinkedinIcon size={32} round />
+            </LinkedinShareButton>
+          </div>
+        </div>
     </div>
   )
 }
