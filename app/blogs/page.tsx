@@ -29,5 +29,4 @@ const page = async () => {
     </div>
   )
 }
-
 export default page
