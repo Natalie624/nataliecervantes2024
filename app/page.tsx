@@ -8,7 +8,7 @@ export default function Home() {
         className="flex items-center w-full min-h-screen bg-cover bg-center bg-violet-950"
       >
         {/* Content */}
-        <div className="pl-8 pr-8 md:pl-40 pb-56 md:pb-20 flex flex-col gap-5 z-[10] max-w-[750px]">
+        <div className="pl-8 pr-8 md:pl-40 flex flex-col gap-5 z-[10] max-w-[750px]">
           <h1 className="text-[40px] md:text-[50px] text-white font-semibold">
             Creative Enterprise
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
