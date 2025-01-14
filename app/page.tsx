@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="w-screen h-screen relative">
+    <main className="relative">
       <div
-        className="flex items-center w-full h-full bg-cover bg-center bg-violet-950"
+        className="flex items-center w-full min-h-screen bg-cover bg-center bg-violet-950"
       >
         {/* Content */}
         <div className="pl-8 pr-8 md:pl-40 pb-56 md:pb-20 flex flex-col gap-5 z-[10] max-w-[750px]">
