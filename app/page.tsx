@@ -66,7 +66,7 @@ export default function Home() {
           Contact Me
         </Link>
       </div>
-      <div className="absolute bottom-48 left-5 md:bottom-30 md:right-10 md:left-auto z-[15]">
+      <div className="absolute bottom-20 left-5 md:bottom-30 md:right-10 md:left-auto z-[15]">
         <Image
           src="/natalie.png"
           alt="natalie"
