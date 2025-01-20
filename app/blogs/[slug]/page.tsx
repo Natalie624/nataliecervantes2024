@@ -96,7 +96,7 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
   };
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center bg-violet-950 p-8 md:p-60 overflow-y-auto">
+    <div className="w-screen h-screen flex flex-col items-center bg-violet-950 p-8 overflow-y-auto">
         <h1 className="md:mt-20 mt-20 text-center text-[28px] md:text-[50px] text-white font-semibold font-family-inter">{blogTitle}</h1>
         {subheader && <h2 className="pt-10 md:pt-20 md:pl-40 md:pr-40 italic text-center text-[10px] md:text-[18px] text-gray-200 font-family-inter">{subheader}</h2>}
         {imageUrl && <Image 
@@ -105,8 +105,8 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
               width={500}
               height={500}
               className="mt-14 mb-8 md:mt-20 md:mb-14"/>}
-        <div className="pr-4 pl-4 mb-8 md:pl-40 md:pr-40 prose text-white font-family-inter">{documentToReactComponents(bodyContent, options)}
-        {/* TODO: created teh associated posts URL as a seperate component and then import here to render */}
+        <div className="mb-8 text-white font-family-inter">{documentToReactComponents(bodyContent, options)}
+        {/* TODO: created the associated posts URL as a seperate component and then import here to render */}
         {/*{associatedPostsUrl && <div className="pt-4 text-left text-[14px] md:text-[24px] text-blue-500">{associatedPostsUrl}</div>}*/}
           <div className="pt-4 text-[12px] md:text-[14px] text-white">If you enjoyed this post please share! {" "} {" "}
             <LinkedinShareButton url={`https://nataliecervantes.netlify.app/blogs/${slug}`}>
