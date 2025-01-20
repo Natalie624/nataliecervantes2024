@@ -1,3 +1,5 @@
+// This is the homepage of the site
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,7 +10,7 @@ export default function Home() {
         className="flex items-center w-full min-h-screen bg-cover bg-center bg-violet-950"
       >
         {/* Content */}
-        <div className="pl-8 pr-8 md:pl-40 flex flex-col gap-5 z-[10] max-w-[750px]">
+        <div className="pl-8 pr-8 pb-[150px] md:pl-40 flex flex-col gap-5 z-[10] max-w-[750px]">
           <h1 className="text-[40px] md:text-[50px] text-white font-semibold">
             Creative Enterprise
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
@@ -44,7 +46,7 @@ export default function Home() {
       </div>
 
       {/* mobile view */}
-      <div className="absolute flex bottom-32 translate-y-[-60px] z-[20] right-5 flex-col md:hidden gap-5">
+      <div className="absolute flex bottom-10 z-[20] right-5 flex-col md:hidden gap-5">
         <Link
           href="/my-skills"
           className="rounded-[20px] group bg-blue-500 px-5 py-3 text-lg text-white max-w-[200px]"
@@ -64,7 +66,7 @@ export default function Home() {
           Contact Me
         </Link>
       </div>
-      <div className="absolute bottom-48 left-5 md:bottom-30 md:right-10 md:left-auto z-[15]">
+      <div className="absolute bottom-20 left-5 md:bottom-30 md:right-10 md:left-auto z-[15]">
         <Image
           src="/natalie.png"
           alt="natalie"
