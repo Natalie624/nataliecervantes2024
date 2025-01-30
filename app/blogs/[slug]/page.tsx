@@ -74,9 +74,15 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
   const options: Options = {
     renderMark: {
       [MARKS.BOLD]: (text: ReactNode) => <b className="text-[18px] text-violet-500">{text}</b>,
-      [MARKS.ITALIC]: (text: ReactNode) => <i>{text}</i>,
+      [MARKS.ITALIC]: (text: ReactNode) => <i className="text-white font-semibold">{text}</i>,
     },
     renderNode: {
+      [INLINES.HYPERLINK]: (node: Node, children: React.ReactNode) => {
+        const url = node.data.uri;
+        return (
+          <a href={url} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">{children}</a>
+        );
+      },
       [BLOCKS.EMBEDDED_ASSET]: (node: Node) => {
         const { blogTitle, file } = node.data.target.fields;
         const imageUrl = `https:${file.url}`;
