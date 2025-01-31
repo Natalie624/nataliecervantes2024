@@ -26,6 +26,7 @@ interface BlogPostEntry extends EntrySkeletonType {
   slug: string;
   bodyContent: Document;
   associatedPostsUrl?: string;
+  publishedDate: string;
   }
 
 const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
@@ -68,8 +69,14 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
     return <div>No blog post found</div>
   }
 
-  const {blogTitle, subheader, image, bodyContent, associatedPostsUrl} = blogPost;
-  const imageUrl = image ? `https:${image.fields.file.url}` : ''; 
+  const {blogTitle, subheader, image, bodyContent, associatedPostsUrl, publishedDate} = blogPost;
+  const imageUrl = image ? `https:${image.fields.file.url}` : '';
+  
+  const formattedDate = new Date(publishedDate).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
   const options: Options = {
     renderMark: {
@@ -114,6 +121,11 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
               width={500}
               height={500}
               className="mt-14 mb-8 md:mt-20 md:mb-14"/>}
+        {publishedDate && (
+          <div className="text-sm text-gray-400 mt-4 mb-2 w-full max-w-2x1 text-left">
+            {formattedDate}
+          </div>
+        )}
         <div className="mb-8 text-white font-family-inter">
           {bodyContent && bodyContent.nodeType === BLOCKS.DOCUMENT 
           ? documentToReactComponents(bodyContent, options)
