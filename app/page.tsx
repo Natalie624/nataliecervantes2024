@@ -11,14 +11,14 @@ export default function Home() {
       >
         {/* Content */}
         <div className="pl-8 pr-8 pb-[150px] md:pl-40 flex flex-col gap-5 z-[10] max-w-[750px]">
-          <h1 className="text-[40px] md:text-[50px] text-white font-semibold">
-            Creative Enterprise
+          <h1 className="text-[36px] md:text-[50px] text-white font-semibold">
+            Technical Programs
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              {" "} Web Solutions
+              {" "} Seamless Execution
             </span>
           </h1>
           <p className="text-gray-200 md:block">
-          Hi I&apos;m Natalie! I&apos;m an accomplished engineering leader and enterprise web developer, with over 10 years of experience delivering high-quality web solutions.
+          Hi I&apos;m Natalie! I&apos;m an accomplished Senior Technical Program Manager and Engineering Leader, with nearly 20 years of experience delivering high-quality software solutions.
           </p>
           <div className="flex-col md:flex-row hidden md:flex gap-5">
             <Link
