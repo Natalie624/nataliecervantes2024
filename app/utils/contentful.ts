@@ -26,6 +26,7 @@ interface BlogPostFields extends EntrySkeletonType {
         blogTitle: string;
         slug: string;
         image?: Asset;
+        publishedDate: string;
     }
 }
 
@@ -101,3 +102,29 @@ export const getBlogPosts = async () => {
   });
 return blogPosts;
 };
+
+export const getPastPosts = async () => {
+  const results = await client.getEntries<BlogPostFields>({
+    content_type: 'blogPost',
+    order: ['-sys.createdAt'], // Order by system creation date
+  });
+
+  const pastPosts = new Date();
+  pastPosts.setDate(pastPosts.getDate() - 7); // may want to update to longer time period in the future
+
+  // filter only posts older than a week 
+  const archivedPosts = results.items
+    .filter((blog) => {
+      const blogDate = new Date(blog.fields.publishedDate);
+      return blogDate < pastPosts;
+    })
+    .map((blog: Entry<BlogPostFields>) => {
+      const { blogTitle, slug } = blog.fields;
+      return {
+        blogTitle: String(blogTitle),
+        slug,
+      };
+      })
+
+  return archivedPosts;
+}

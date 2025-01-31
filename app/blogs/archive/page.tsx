@@ -1,10 +1,10 @@
 // This is the previous post listing page or archive page for links to previous blog posts
 import Link from 'next/link'
 import React from 'react'
-import { getBlogPosts } from '../../utils/contentful'
+import { getPastPosts } from '../../utils/contentful'
 
 const BlogArchive = async () => {
-  const blogs = await getBlogPosts();
+  const blogs = await getPastPosts();
 
   return (
     <div className='w-screen h-screen flex flex-col items-center bg-center bg-cover bg-violet-950'>
