@@ -1,7 +1,7 @@
 /* We are using the Contentful REST API here. client.getEntries method is part of Contentful's REST API and is used 
 * to retrieve entries. The REST API is structured around entries and assets and it allows querying with certain parameters
 * like 'content_type' and field value (ie; 'fields.slug[match]').
-* 'getBlogPosts' function all blog posts. 'getEntryBySlug' function returns a single blog post when called with a given slug.
+* 'getBlogPosts' function returns all blog posts. 'getEntryBySlug' function returns a single blog post when called with a given slug.
 */
 
 
@@ -76,31 +76,6 @@ export const getEntryBySlug = async (slug: string, type: string) => {
   } else {
     throw new Error(`No entries found for slug: ${slug}`);
   }
-};
-
-export const getEntriesByType = async (type: string) => {
-  const response = await client.getEntries({
-    content_type: type,
-  });
-
-  return response.items;
-};
-
-export const getBlogPosts = async () => {
-  const results = await client.getEntries<BlogPostFields>({
-    content_type: 'blogPost',
-    order: ['-sys.createdAt'], // Order by creation date, descending 
-  });
-
-  const blogPosts = results.items.map((blog: Entry<BlogPostFields>) => {
-    const { blogTitle, slug } = blog.fields;
-    
-    return {
-      blogTitle: String(blogTitle),
-      slug,
-    };
-  });
-return blogPosts;
 };
 
 export const getPastPosts = async () => {
