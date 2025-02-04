@@ -19,7 +19,10 @@ const page = async () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[90%] max-h-[90%]">
           {blogs.map((blog, index) => (
             <div key={index}>
-              <Link href={`/blogs/${blog.slug}`}> 
+              <Link 
+                href={`/blogs/${blog.slug}`}
+                aria-label={blog.blogTitle}
+                > 
                 <BlogCard image={blog.image} title={blog.blogTitle}/>
               </Link>
             </div>
