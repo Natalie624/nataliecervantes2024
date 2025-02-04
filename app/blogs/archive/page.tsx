@@ -13,11 +13,13 @@ const BlogArchive = async () => {
           Previous Articles
           </h1>
         </div>
-        <div className="flex flex-col items-center space-y-4">
+        <div className="flex flex-col items-center space-y-4 w-full px-4">
         {blogs.map((blog, index) => (
+          <div key={index} className="w-full text-center">
             <Link href={`/blogs/${blog.slug}`} 
                   key={index} 
-                  className="pl-8 pr-8 flex z-[10] text-gray-200 font-semibold underline md:no-underline md:hover:underline md:hover:text-blue-500 transiton-colors">{blog.blogTitle}</Link>        
+                  className="inline-block text-gray-200 font-semibold underline md:no-underline md:hover:underline md:hover:text-blue-500 transiton-colors">{blog.blogTitle}</Link>
+          </div>        
         ))}
       </div>
     </div>

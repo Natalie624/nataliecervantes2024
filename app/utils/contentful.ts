@@ -88,5 +88,6 @@ export const getPastPosts = async () => {
     };
   });
 
-  return pastPosts;
+  // returns past posts beyond the newest 4 and adds return message if there are no pasts posts
+  return pastPosts.length > 0 ? pastPosts : [{ blogTitle: "There are currently no archived posts to display", slug: " "}];
 };
