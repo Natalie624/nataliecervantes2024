@@ -1,12 +1,30 @@
 // This is the featured blog posts page with cards highlighting new blog posts
 
-import BlogCard from '@/components/BlogCard'
-import { getNewestBlogPosts } from '../utils/contentful'
-import Link from 'next/link'
-import React from 'react'
+import BlogCard from '@/components/BlogCard';
+import Script from 'next/script';
+import { getNewestBlogPosts } from '../utils/contentful';
+import Link from 'next/link';
+import React from 'react';
 
 const page = async () => {
   const blogs = await getNewestBlogPosts()
+
+ const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Natalie's Blogs",
+    "url": "https://nataliecervantes.com/blogs",
+    "author": {
+      "@type": "Person",
+      "name": "Natalie Cervantes"
+    },
+    "blogPosts": blogs.map((blog) => ({
+      "@type": "BlogPosting",
+      "headline": blog.blogTitle,
+      "url": `https://nataliecervantes.com/blogs/${blog.slug}`,
+    }))
+  };
+
 
   return (
     <div className="w-screen h-screen  bg-center bg-cover bg-violet-950 overflow-y-auto">
@@ -29,7 +47,8 @@ const page = async () => {
           ))}
         </div>
       </div>
+      <Script id="json-ld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </div>
-  )
-}
+  );
+};
 export default page
