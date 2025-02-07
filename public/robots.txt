@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nataliecervantes.com
+
+# Sitemaps
+Sitemap: https://nataliecervantes.com/sitemap.xml

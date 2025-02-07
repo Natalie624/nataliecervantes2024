@@ -2,10 +2,11 @@
 "use client";
 
 import React, { ReactNode, useEffect, useState } from 'react';
+import Script from 'next/script';
 import { getEntryBySlug } from '../../utils/contentful';
 import Image from 'next/image';
 import { Node } from '@contentful/rich-text-types';
-import { BLOCKS, INLINES, MARKS,Document } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES, MARKS, Document } from '@contentful/rich-text-types';
 import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer';
 import { EntrySkeletonType } from 'contentful';
 import {
@@ -33,7 +34,6 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
   const [blogPost, setBlogPost] = useState<BlogPostEntry | null>(null);
   const [loading, setloading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const titleToShare = `Checkout this blog post by @nataliecervantes: ${blogPost?.blogTitle}`
 
   useEffect(() => {
     const fetchBlogPost = async () => {
@@ -69,7 +69,7 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
     return <div>No blog post found</div>
   }
 
-  const {blogTitle, subheader, image, bodyContent, associatedPostsUrl, publishedDate} = blogPost;
+  const {blogTitle, subheader, image, bodyContent, publishedDate} = blogPost;
   const imageUrl = image ? `https:${image.fields.file.url}` : '';
   
   const formattedDate = new Date(publishedDate).toLocaleDateString('en-US', {
@@ -77,6 +77,31 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
     month: 'long',
     day: 'numeric',
   });
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.nataliecervantes.com/blogs/${slug}`
+  },
+  "headline": blogTitle,
+  "description": subheader || "",
+  "image": imageUrl || "",
+  "author": {
+    "@type": "Person",
+    "name": "Natalie Cervantes"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Natalie's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "./nc-logo.png"
+    }
+  },
+  "datePublished": formattedDate
+};
 
   const options: Options = {
     renderMark: {
@@ -138,8 +163,10 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
             </LinkedinShareButton>
           </div>
         </div>
+    {/* JSON-LD for SEO) */}
+    <Script id="json-ld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </div>
-  )
-}
+  );
+};
 
 export default BlogPost
