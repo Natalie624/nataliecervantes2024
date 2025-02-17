@@ -72,7 +72,7 @@ export default function Home() {
           alt="natalie"
           width={480}
           height={480}
-          className="max-w-[180px] max-h-auto md:max-w-[420px] md:max-h-auto"
+          className="w-[150px] h-auto sm:w-[180px] md:w-[250px] md:h-auto lg:w-[420px]"
         />
       </div>
     </main>
