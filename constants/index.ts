@@ -76,11 +76,17 @@ export const SkillData = [
     height: 65,
   },
   {
-    name: "MySQL",
-    Image: "/mysql.png",
-    width: 80,
-    height: 80,
+    name: "Confluence",
+    Image: "/mark-gradient-blue-confluence.png",
+    width: 65,
+    height: 65,
   },
+  {
+    name: "Jira",
+    Image: "/mark-gradient-blue-jira.png",
+    width: 65,
+    height: 65,
+  }
 ];
 
 export const NavLinks = [
