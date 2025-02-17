@@ -146,12 +146,13 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
               width={500}
               height={500}
               className="mt-14 mb-8 md:mt-20 md:mb-14"/>}
-        {publishedDate && (
-          <div className="text-sm text-gray-400 mt-4 mb-2 w-full max-w-2x1 text-left">
-            {formattedDate}
-          </div>
-        )}
-        <div className="mb-8 text-white font-family-inter">
+        
+        <div className="mb-8 text-white font-family-inter max-w-[42.875rem] w-full mx-auto px-4 sm:px-6 lg:px-8">
+          {publishedDate && (
+            <div className="text-sm text-gray-400 mt-4 mb-2 w-full max-w-2x1 text-left">
+              {formattedDate}
+            </div>
+          )}
           {bodyContent && bodyContent.nodeType === BLOCKS.DOCUMENT 
           ? documentToReactComponents(bodyContent, options)
           : <p>Content not available </p>}
