@@ -11,6 +11,15 @@ const Footer = () => {
                         key="LinkedIn"
                         src="/LinkedIn_icon.svg"
                         alt="LinkedIn"
+                        width={32}
+                        height={32}
+                        />
+                    </a>
+                    <a href='https://x.com/softwarenomad'>
+                        <Image
+                        key="X.com"
+                        src="/X-logo-white.png"
+                        alt="X.com"
                         width={28}
                         height={28}
                         />
@@ -20,8 +29,8 @@ const Footer = () => {
                             key="Github"
                             src="github-mark-white.svg"
                             alt="Github"
-                            width={28} // Set desired width
-                            height={28} // Set height proportionally or same value for square
+                            width={32} // Set desired width
+                            height={32} // Set height proportionally or same value for square
                             className="max-w-[28px] max-h-auto"
                         />
                     </a>
