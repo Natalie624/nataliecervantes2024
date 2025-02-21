@@ -12,6 +12,8 @@ import { EntrySkeletonType } from 'contentful';
 import {
   LinkedinShareButton,
   LinkedinIcon,
+  TwitterShareButton,
+  TwitterIcon,
 } from 'next-share';
 
 interface BlogPostEntry extends EntrySkeletonType {
@@ -158,10 +160,13 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
           : <p>Content not available </p>}
         {/* TODO: created the associated posts URL as a seperate component and then import here to render */}
         {/*{associatedPostsUrl && <div className="pt-4 text-left text-[14px] md:text-[24px] text-blue-500">{associatedPostsUrl}</div>}*/}
-          <div className="pt-4 text-[12px] md:text-[14px] text-white flex items-center gap-4">If you enjoyed this post please share! {" "}
+          <div className="pt-4 text-[12px] md:text-[14px] text-white flex items-center gap-4">Enjoyed this post? Share it with your friends! {" "}
             <LinkedinShareButton url={`https://nataliecervantes.netlify.app/blogs/${slug}`}>
               <LinkedinIcon size={32} round />
             </LinkedinShareButton>
+            <TwitterShareButton url={`https://nataliecervantes.netlify.app/blogs/${slug}`}>
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
           </div>
         </div>
     {/* JSON-LD for SEO) */}
