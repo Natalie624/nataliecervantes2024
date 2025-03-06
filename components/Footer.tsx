@@ -36,7 +36,7 @@ const Footer = () => {
                     </a>
                 </div>
                 <div>
-                    <p className="text-gray-400 text-[8px]">Site designed and developed by Natalie Cervantes</p>
+                    <p className="text-gray-400 text-[8px]">Site designed and developed by Natalie Cervantes ©2025</p>
                 </div>
             </div>    
         </div>
