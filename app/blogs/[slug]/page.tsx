@@ -30,6 +30,7 @@ interface BlogPostEntry extends EntrySkeletonType {
   bodyContent: Document;
   associatedPostsUrl?: string;
   publishedDate: string;
+  readTime: string;
   }
 
 const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
@@ -71,7 +72,7 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
     return <div>No blog post found</div>
   }
 
-  const {blogTitle, subheader, image, bodyContent, publishedDate} = blogPost;
+  const {blogTitle, subheader, image, bodyContent, publishedDate, readTime} = blogPost;
   const imageUrl = image ? `https:${image.fields.file.url}` : '';
   
   const formattedDate = new Date(publishedDate).toLocaleDateString('en-US', {
@@ -152,7 +153,7 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
         <div className="mb-8 text-white font-family-inter max-w-[42.875rem] w-full mx-auto px-4 sm:px-6 lg:px-8">
           {publishedDate && (
             <div className="text-sm text-gray-400 mt-4 mb-2 w-full max-w-2x1 text-left">
-              {formattedDate}
+              {formattedDate}{" "} • {" "} {readTime}
             </div>
           )}
           {bodyContent && bodyContent.nodeType === BLOCKS.DOCUMENT 
