@@ -27,6 +27,8 @@ interface BlogPostFields extends EntrySkeletonType {
         slug: string;
         image?: Asset;
         publishedDate: string;
+        readTime: string;
+
     }
 }
 
