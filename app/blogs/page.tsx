@@ -41,7 +41,7 @@ const page = async () => {
                 href={`/blogs/${blog.slug}`}
                 aria-label={blog.blogTitle}
                 > 
-                <BlogCard image={blog.image} title={blog.blogTitle}/>
+                <BlogCard image={blog.image} title={blog.blogTitle} readTime={blog.readTime}/>
               </Link>
             </div>
           ))}

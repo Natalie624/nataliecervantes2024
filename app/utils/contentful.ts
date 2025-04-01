@@ -41,7 +41,7 @@ export const getNewestBlogPosts = async () => {
   });
  
   const recentPosts = results.items.slice(0,4).map((blog: Entry<BlogPostFields>) => {
-    const { blogTitle, slug, image} = blog.fields;
+    const { blogTitle, slug, image, readTime} = blog.fields;
 
     // Custom type guard function 'isAsset' to ensure that image is valid Asset object and that it has the necessary fields and file properties.
     // This type guard checks that if 'image' exits (is not null or undefined). If 'image' is an object. And if fields exists in image and  ontains a file field. 
@@ -55,6 +55,7 @@ export const getNewestBlogPosts = async () => {
         blogTitle: String(blogTitle),
         slug,
         image: imageUrl || '',
+        readTime: String(readTime),
       }; 
     });
     return recentPosts;
