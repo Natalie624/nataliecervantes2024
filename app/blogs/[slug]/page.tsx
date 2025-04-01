@@ -128,6 +128,7 @@ const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
             alt={altText}
             width={500}
             height={500}
+            className="mb-4 mt-4 block mx-auto"
           />
         );
       },
