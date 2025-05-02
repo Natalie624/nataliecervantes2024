@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import EmojiIntro from "@/components/EmojiIntro";
 
 export default function Home() {
   return (
@@ -17,9 +18,12 @@ export default function Home() {
               {" "} Seamless Execution
             </span>
           </h1>
+
           <p className="text-gray-200 md:block">
-          Hi I&apos;m Natalie! I&apos;m an accomplished Senior Technical Program Manager and Engineering Leader, with nearly 20 years of experience delivering high-quality software solutions.
+          <EmojiIntro />
+          {" "}I&apos;m an accomplished Senior Technical Program Manager and Engineering Leader, with nearly 20 years of experience delivering high-quality software solutions.
           </p>
+
           <div className="flex-col md:flex-row hidden md:flex gap-5">
             <Link
               href="/my-skills"
