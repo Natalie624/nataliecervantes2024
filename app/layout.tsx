@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: "My personal musings of all things agile, technical program management, and software development.",
 };
 
-const isPreview = process.env.NEXT_CONTENTFUL_PREVIEW_ACCESS_TOKEN === 'true';
+const isPreview = process.env.NEXT_PUBLIC_USE_CONTENTFUL_PREVIEW === 'true';
 
 export default function RootLayout({
   children,
