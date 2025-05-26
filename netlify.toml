@@ -1,0 +1,7 @@
+[context.production.environment]
+  USE_CONTENTFUL_PREVIEW = "false"
+  NEXT_PUBLIC_USE_CONTENTFUL_PREVIEW = "false"
+
+[context."staging".environment]
+  USE_CONTENTFUL_PREVIEW = "true"
+  NEXT_PUBLIC_USE_CONTENTFUL_PREVIEW = "true"
