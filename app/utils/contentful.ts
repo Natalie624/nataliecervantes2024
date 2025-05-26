@@ -9,13 +9,33 @@ import { createClient, Entry, Asset, EntrySkeletonType } from 'contentful';
 
 
 export const createContentClient = () => {
-  if (!process.env.CONTENTFUL_SPACE_ID || !process.env.CONTENTFUL_ACCESS_TOKEN) {
-  throw new Error('Missing Contentful environment variables');
-}
-return createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-});
+  const space = process.env.CONTENTFUL_SPACE_ID;
+  const usePreview = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN === 'true';
+
+  // Check for required environment variables
+  if (!space) {
+    throw new Error('Missing CONTENTFUL_SPACE_ID');
+  }
+  
+  if (usePreview) {
+    if (!process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN) {
+      throw new Error('Missing CONTENTFUL_PREVIEW_ACCESS_TOKEN for Preview API');
+    }
+    return createClient({
+      space,
+      accessToken: process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN,
+      host: 'preview.contentful.com'
+    });
+  } else {
+    if (!process.env.CONTENTFUL_ACCESS_TOKEN) {
+    throw new Error('Missing CONTENTFUL_ACCESS_TOKEN for Delivery API');
+  }
+  return createClient({
+    space,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    host: 'cdn.contentful.com'
+    });
+  }
 };
 
 const client = createContentClient();
