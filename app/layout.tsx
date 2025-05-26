@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
+import Banner from "@/components/Banner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
   title: "Natalie Cervantes | Blog",
   description: "My personal musings of all things agile, technical program management, and software development.",
 };
+
+const isPreview = process.env.NEXT_CONTENTFUL_PREVIEW_ACCESS_TOKEN === 'true';
 
 export default function RootLayout({
   children,
@@ -35,6 +38,7 @@ export default function RootLayout({
           }}
         />
       </head>
+      {isPreview && <Banner />}
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <Navbar />
         <Analytics />
