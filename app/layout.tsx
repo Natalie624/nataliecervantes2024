@@ -38,8 +38,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      {isPreview && <Banner />}
       <body className={`${inter.className} min-h-screen flex flex-col`}>
+        {isPreview && <Banner />}
         <Navbar />
         <Analytics />
           <main className="flex-grow">{children}</main>

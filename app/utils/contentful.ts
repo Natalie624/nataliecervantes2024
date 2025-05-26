@@ -10,7 +10,7 @@ import { createClient, Entry, Asset, EntrySkeletonType } from 'contentful';
 
 export const createContentClient = () => {
   const space = process.env.CONTENTFUL_SPACE_ID;
-  const usePreview = process.env.USE_CONTENTFUL_PREVIEW === 'true';
+  const usePreview = process.env.USE_CONTENTFUL_PREVIEW === 'true'; //this is determined by the netlify.toml
 
   // Check for required environment variables
   if (!space) {
