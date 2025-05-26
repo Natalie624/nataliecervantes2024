@@ -39,7 +39,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
-        {isPreview && <Banner />}
+        {isPreview && <Banner/>}
         <Navbar />
         <Analytics />
           <main className="flex-grow">{children}</main>
