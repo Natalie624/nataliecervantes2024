@@ -41,7 +41,7 @@ export const createContentClient = () => {
   }
 };
 
-const client = createContentClient();
+//const client = createContentClient();
 
 // BlogPostFields must be structured based on the expected fields of Contentful entries
 interface BlogPostFields extends EntrySkeletonType {
@@ -57,6 +57,8 @@ interface BlogPostFields extends EntrySkeletonType {
 
 // Get 4 newest blog posts here and use in the main blog page "Featured Blogs"
 export const getNewestBlogPosts = async () => {
+    const client = createContentClient();
+
     const results = await client.getEntries<BlogPostFields>({
       content_type: 'blogPost',
       order: ['-sys.createdAt'], // Order by creation date, descending
@@ -85,6 +87,8 @@ export const getNewestBlogPosts = async () => {
 };
 
 export const getEntryBySlug = async (slug: string, type: string) => {
+  const client = createContentClient();
+
   const queryOptions = {
     content_type: type,
     include: 1, // Include linked assets (images)
@@ -100,6 +104,7 @@ export const getEntryBySlug = async (slug: string, type: string) => {
 };
 
 export const getPastPosts = async () => {
+  const client = createContentClient();
   const results = await client.getEntries<BlogPostFields>({
     content_type: 'blogPost',
     order: ['-sys.createdAt'], // Order by system creation date
