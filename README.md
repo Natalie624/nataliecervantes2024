@@ -9,4 +9,3 @@ Feel free to connect with me: &nbsp; &nbsp;<a href="https://www.linkedin.com/in/
 - Site is running live on Netlify at https://nataliecervantes.netlify.app/ pointing to my custom domain https://nataliecervantes.com
 - Site is using Contentful Headless CMS 
 - Specifications of this site are contained in the [technical specification](https://docs.google.com/document/d/11WfXT9-cQuHo3M89ma7tYsz9BBfpmfkYj0laOrjty6g/edit?usp=sharing) accessed by permission only. 
-- As of May 2025 site is running on Node v24.1.0
