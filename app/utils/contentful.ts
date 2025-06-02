@@ -36,7 +36,7 @@ interface BlogPostFields extends EntrySkeletonType {
 export const getNewestBlogPosts = async () => {
     const results = await client.getEntries<BlogPostFields>({
       content_type: 'blogPost',
-      order: ['-sys.createdAt'], // Order by creation date, descending
+      order: ['-sys.updatedAt', '-sys.createdAt'], // Order by creation date, descending and updated date, descending
       include: 1, // Include linked assets (images)
   });
  
