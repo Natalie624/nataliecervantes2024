@@ -10,7 +10,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Natalie Cervantes | Blog",
-  description: "My personal musings of all things agile, technical program management, and software development.",
+  description: "Agile truths, TPM tactics, and software dev insights that go beyond the textbook. Learn from a veteran who's lived it.",
+  icons: {
+    icon: "/favicon.ico",
+  }
 };
 
 export default function RootLayout({
