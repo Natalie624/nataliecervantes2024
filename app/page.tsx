@@ -26,6 +26,13 @@ export default function Home() {
 
           <div className="flex-col md:flex-row hidden md:flex gap-5">
             <Link
+              href="/products"
+              className="rounded-[20px] group relative bg-blue-500 hover:bg-blue-400 px-5 py-3 text-lg text-white max-w-[200px] w-full flex items-center justify-center"
+            >
+              Products
+            </Link>
+             
+            <Link
               href="/my-skills"
               className="rounded-[20px] group relative bg-blue-500 hover:bg-blue-400 px-5 py-3 text-lg text-white max-w-[200px] w-full flex items-center justify-center"
             >
@@ -51,6 +58,10 @@ export default function Home() {
 
       {/* mobile view */}
       <div className="absolute flex bottom-10 z-[20] right-5 flex-col md:hidden gap-5">
+        <Link href="/products"
+          className="rounded-[20px] group bg-blue-500 px-5 py-3 text-lg text-white max-w-[200px] w-full flex items-center justify-center">
+          Products
+        </Link>
         <Link
           href="/my-skills"
           className="rounded-[20px] group bg-blue-500 px-5 py-3 text-lg text-white max-w-[200px] w-full flex items-center justify-center"
