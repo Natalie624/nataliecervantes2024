@@ -1,4 +1,4 @@
-import { RxStack, RxFileText, RxArchive } from "react-icons/rx";
+import { RxStack, RxFileText, RxArchive, RxRocket } from "react-icons/rx";
 //see https://react-icons.github.io/react-icons/icons/rx/ for all icons
 
 export const SkillData = [
@@ -105,4 +105,9 @@ export const NavLinks = [
     icon: RxArchive,
     link: "/blogs/archive",
   },
+  {
+    name: "/products",
+    icon: RxRocket,
+    link: "/products",
+  }
 ];
