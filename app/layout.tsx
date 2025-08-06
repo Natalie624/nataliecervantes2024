@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Natalie Cervantes | Blog",
   description: "Agile truths, TPM tactics, and software dev insights that go beyond the textbook. Learn from a veteran who's lived it.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon-nc.ico",
   }
 };
 
