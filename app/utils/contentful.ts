@@ -6,6 +6,8 @@
 
 
 import { createClient, Entry, Asset, EntrySkeletonType } from 'contentful';
+import { Document } from '@contentful/rich-text-types';
+
 
 
 export const createContentClient = () => {
@@ -31,6 +33,25 @@ interface BlogPostFields extends EntrySkeletonType {
 
     }
 }
+
+export interface LegalContent {
+  slug: string;
+  legalHeader: string;
+  legalDescription: Document;
+}
+
+// Get Legal Content
+export const getLegalContentBySlug = async (slug: string): Promise<LegalContent> => {
+  const entries = await getEntryBySlug(slug, 'legalDocs');
+  const entry = entries[0]; // still an Entry<any> — no cast needed
+
+  return {
+    slug: entry.fields.slug as string,
+    legalHeader: entry.fields.legalHeader as string,
+    legalDescription: entry.fields.legalDescription as Document,
+  };
+};
+
 
 // Get 4 newest blog posts here and use in the main blog page "Featured Blogs"
 export const getNewestBlogPosts = async () => {
