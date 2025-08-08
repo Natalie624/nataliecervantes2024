@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import EmojiIntro from "@/components/EmojiIntro";
+import CalendlyButton from "@/components/CalendlyButton";
 
 export default function Home() {
   return (
@@ -38,9 +39,10 @@ export default function Home() {
               <Link href="/blogs" className="rounded-[20px] group bg-blue-500 hover:bg-blue-400 px-4 py-2 text-base text-white min-w-[140px] flex items-center justify-center">
                 Blog
               </Link>
-              <a href="mailto:natalie.cervantes@gmail.com" className="rounded-[20px] group bg-blue-500 hover:bg-blue-400 px-4 py-2 text-base text-white min-w-[140px] flex items-center justify-center">
-                Contact
-              </a>
+              <CalendlyButton
+                label="Book a Call"
+                className="rounded-[20px] group bg-blue-500 hover:bg-blue-400 px-4 py-2 text-base text-white min-w-[140px] flex items-center justify-center"
+              />
             </div>
           </div>
         </div>
@@ -64,12 +66,10 @@ export default function Home() {
         >
           Blog
         </Link>
-        <Link
-          href="/contact-me"
+        <CalendlyButton
+          label="Book a Call"
           className="rounded-[20px] group bg-blue-500 px-5 py-3 text-lg text-white max-w-[200px] w-full flex items-center justify-center"
-        >
-          Contact
-        </Link>
+        />
       </div>
 
       {/* Natalie image */}
