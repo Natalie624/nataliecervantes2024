@@ -1,4 +1,4 @@
-// app/privacy/page.tsx
+// app/terms/page.tsx
 
 import React, { ReactNode } from "react";
 import { getLegalContentBySlug } from "../utils/contentful";
@@ -36,8 +36,8 @@ const options: Options = {
   },
 };
 
-const PrivacyPage = async () => {
-  const { legalHeader, legalDescription } = await getLegalContentBySlug("privacy-policy-pulsecheck");
+const TermsPage = async () => {
+  const { legalHeader, legalDescription } = await getLegalContentBySlug("terms-of-service");
 
   return (
     <main className="min-h-screen bg-white px-6 py-24 md:px-20 text-gray-800 pt-[120px]">
@@ -54,4 +54,4 @@ const PrivacyPage = async () => {
   );
 };
 
-export default PrivacyPage;
+export default TermsPage;

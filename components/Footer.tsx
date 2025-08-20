@@ -34,8 +34,8 @@ const Footer = () => {
 
         {/* Right side: Legal links */}
         <div className="flex flex-row gap-4 text-gray-300 text-sm mt-2 md:mt-0">
-          <Link href="/terms-of-service-pulsecheck" className="hover:underline">Terms</Link>
-          <Link href="/privacy-policy-pulsecheck" className="hover:underline">Privacy</Link>
+          <Link href="/terms-of-service" className="hover:underline">Terms</Link>
+          <Link href="/privacy-policy" className="hover:underline">Privacy</Link>
         </div>
       </div>
     </footer>
