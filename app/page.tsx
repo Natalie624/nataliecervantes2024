@@ -23,8 +23,7 @@ export default function Home() {
 
             {/* Paragraph */}
             <p className="text-gray-200 md:block">
-              <EmojiIntro />
-              {" "}I&apos;m an accomplished Senior Technical Program Manager and Engineering Leader, with nearly 20 years of experience delivering high-quality software solutions.
+              Hi! I&apos;m Natalie, Fractional Head of Programs & Technical Delivery. I don&apos;t just manage programs, I build them - and then drive execution at scale.
             </p>
         
 
