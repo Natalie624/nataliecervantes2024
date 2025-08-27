@@ -182,7 +182,7 @@ export const getHomepageSections = async (): Promise<HomepageSectionData[]> => {
 
     return {
       header: String(sectionHeader),
-      body: sectionBody as Document,
+      body: sectionBody as unknown as Document,
       imageUrl,
       ctaUrl: sectionCTA ? String(sectionCTA) : undefined,
       ctaLabel: ctaLabel ? String(ctaLabel) : undefined,

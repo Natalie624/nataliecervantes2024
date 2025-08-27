@@ -86,6 +86,12 @@ export const SkillData = [
     Image: "/mark-gradient-blue-jira.png",
     width: 65,
     height: 65,
+  },
+  {
+    name: "OpenAI",
+    Image: "OpenAI-white-monoblossom.svg",
+    width: 80,
+    height: 80,
   }
 ];
 
