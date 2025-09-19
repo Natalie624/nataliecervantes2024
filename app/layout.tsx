@@ -9,8 +9,8 @@ import Analytics from "@/components/Analytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Natalie Cervantes | Blog",
-  description: "Agile truths, TPM tactics, and software dev insights that go beyond the textbook. Learn from a veteran who's lived it.",
+  title: "Natalie Cervantes | Fractional Head of Programs & Technical Delivery",
+  description: "Fractional executive helping mid-market SaaS, and enterprise tech leaders deliver faster, cut engineering waste, and scale without burnout. Insights on Agile, TPM tactics, and software delivery leadership.",
   icons: {
     icon: "/favicon-nc.ico",
   }
