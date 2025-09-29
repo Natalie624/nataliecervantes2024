@@ -58,13 +58,13 @@ export default async function Home() {
         <div className="w-full">
           <div className="flex flex-col gap-6 z-[10] w-full max-w-[750px] px-6 md:px-20 text-left justify-center translate-y-[-40px] md:translate-y-0 transition-all duration-300">
             <h1 className="text-[36px] md:text-[50px] text-white font-semibold leading-tight">
-              Technical Programs
+              Supporting Leaders
             </h1>
             <h2 className="text-[32px] md:text-[42px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 leading-tight">
-              Seamless Execution
+              Empowering Teams
             </h2>
             <p className="text-gray-200 md:block">
-              Hi! I&apos;m Natalie, Fractional Head of Programs & Technical Delivery. I don&apos;t just manage programs, I build them - and then drive execution at scale.
+              Hi! I&apos;m Natalie, Fractional Head of Programs & Strategy. I partner with SaaS leaders to strengthen strategy, close execution gaps, and create the rhythms that keep teams engaged.
             </p>
 
             {/* Desktop / Tablet Button Row */}
