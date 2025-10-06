@@ -18,7 +18,7 @@ export default async function Home() {
       {/* HERO stays violet; now 'relative' so absolute kids anchor here */}
       <div className="relative flex items-center w-full min-h-screen bg-cover bg-center bg-violet-950">
         {/* Mobile buttons — keep absolute, but inside hero */}
-        <div className="absolute bottom-10 right-5 z-[20] flex-col md:hidden gap-5 flex">
+        <div className="absolute bottom-24 right-5 z-[20] flex-col md:hidden gap-5 flex">
           <Link
             href="/products"
             className="rounded-[20px] group bg-blue-500 px-5 py-3 text-lg text-white max-w-[200px] w-full flex items-center justify-center"
@@ -56,11 +56,12 @@ export default async function Home() {
 
         {/* Hero content */}
         <div className="w-full">
-          <div className="flex flex-col gap-6 z-[10] w-full max-w-[750px] px-6 md:px-20 text-left justify-center translate-y-[-40px] md:translate-y-0 transition-all duration-300">
-            <h1 className="text-[36px] md:text-[50px] text-white font-semibold leading-tight">
+          <div className="flex flex-col gap-5 z-[10] w-full max-w-[750px] px-6 md:px-20 text-left justify-center translate-y-[-60px] sm:translate-y-[-40px] md:translate-y-0 transition-all duration-300">
+
+            <h1 className="text-[34px] md:text-[50px] text-white font-semibold leading-tight">
               Supporting Leaders
             </h1>
-            <h2 className="text-[32px] md:text-[42px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 leading-tight">
+            <h2 className="text-[34px] md:text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 leading-tight">
               Empowering Teams
             </h2>
             <p className="text-gray-200 md:block">
