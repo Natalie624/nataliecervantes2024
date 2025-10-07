@@ -17,8 +17,9 @@ export default async function Home() {
     <main className="relative">
       {/* HERO stays violet; now 'relative' so absolute kids anchor here */}
       <div className="relative flex items-center w-full min-h-screen bg-cover bg-center bg-violet-950">
+        
         {/* Mobile buttons — keep absolute, but inside hero */}
-        <div className="absolute bottom-24 right-5 z-[20] flex-col md:hidden gap-5 flex">
+        <div className="absolute bottom-20 right-5 z-[20] flex-col md:hidden gap-5 flex">
           <Link
             href="/products"
             className="rounded-[20px] group bg-blue-500 px-5 py-3 text-lg text-white max-w-[200px] w-full flex items-center justify-center"
