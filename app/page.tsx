@@ -46,7 +46,7 @@ export default async function Home() {
         {/* Natalie image — also absolute inside hero */}
         <div className="absolute bottom-20 left-5 md:bottom-30 md:right-10 md:left-auto z-[15]">
           <Image
-            src="/main-natalie-photo.png"
+            src="/nc-homepage-image.png"
             alt="natalie"
             width={480}
             height={480}
