@@ -66,7 +66,7 @@ export default async function Home() {
               Empowering Teams
             </h2>
             <p className="text-gray-200 md:block">
-              Hi! I&apos;m Natalie, Fractional Head of Programs & Strategy. I partner with SaaS leaders to strengthen strategy, close execution gaps, and create the rhythms that keep teams engaged.
+              Hi! I&apos;m Natalie, Fractional Chief Product Officer. I partner with SaaS leaders to align product strategy with execution, build customer-informed roadmaps, and create the systems that drive predictable delivery.
             </p>
 
             {/* Desktop / Tablet Button Row */}
