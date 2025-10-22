@@ -55,12 +55,12 @@ export default function HomepageSection({ section, index }: Props) {
   const isOdd = index % 2 === 1;
 
   // Layout: alternate image/text on desktop; stack on mobile
-  // If no image, center the text and span full width
+  // If no image, left justify the text and span full width
   const wrapperDir = hasImage ? (isOdd ? 'md:flex-row-reverse' : 'md:flex-row') : 'md:flex-row';
   const textColClasses = hasImage
     ? 'md:w-1/2 w-full'
     : 'w-full';
-  const textInnerClasses = hasImage ? 'mx-0' : 'mx-auto text-center';
+  const textInnerClasses = hasImage ? 'mx-0' : 'mx-0 text-left';
 
   // Section 4 (index 3) fallback CTA → Calendly if no CMS URL provided
   const shouldShowCalendly = !ctaUrl && index === 3;
