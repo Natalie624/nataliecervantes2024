@@ -9,8 +9,8 @@ import Analytics from "@/components/Analytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Natalie Cervantes | Fractional Head of Programs & Technical Delivery",
-  description: "Fractional executive helping mid-market SaaS, and enterprise tech leaders deliver faster, cut engineering waste, and scale without burnout. Insights on Agile, TPM tactics, and software delivery leadership.",
+  title: "Natalie Cervantes | Fractional Chief Product Officer",
+  description: "Fractional executive partnering with SaaS leaders to strengthen product strategy, align roadmaps with business goals, and build the systems that drive execution.",
   icons: {
     icon: "/favicon-nc.ico",
   }
