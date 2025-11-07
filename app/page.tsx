@@ -21,10 +21,10 @@ export default async function Home() {
         {/* Mobile buttons — keep absolute, but inside hero */}
         <div className="absolute bottom-20 right-5 z-[20] flex-col md:hidden gap-5 flex">
           <Link
-            href="/products"
+            href="/resources"
             className="rounded-[20px] group bg-blue-500 px-5 py-3 text-lg text-white max-w-[200px] w-full flex items-center justify-center"
           >
-            Products
+            Resources
           </Link>
           <Link
             href="/my-skills"
@@ -72,10 +72,10 @@ export default async function Home() {
             {/* Desktop / Tablet Button Row */}
             <div className="hidden md:flex gap-5 mt-4 self-center">
               <Link
-                href="/products"
+                href="/resources"
                 className="rounded-[20px] group bg-blue-500 hover:bg-blue-400 px-4 py-2 text-base text-white min-w-[140px] flex items-center justify-center"
               >
-                Products
+                Resources
               </Link>
               <Link
                 href="/my-skills"
