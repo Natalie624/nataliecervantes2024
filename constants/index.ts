@@ -112,8 +112,8 @@ export const NavLinks = [
     link: "/blogs/archive",
   },
   {
-    name: "/products",
+    name: "/resources",
     icon: RxRocket,
-    link: "/products",
+    link: "/resources",
   }
 ];
