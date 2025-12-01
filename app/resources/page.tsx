@@ -13,16 +13,16 @@ interface Resource {
 const resources: Resource[] = [
   {
     id: 1,
-    title: "Building a Disciplined Product Vision at Scale",
-    description: "PDF Guide",
-    downloadUrl: "https://assets.ctfassets.net/ozh7tl5h55e7/SowniJHQdigvHRN4EhECJ/0ad44c50e120c7dff9b8fd3c403b7b69/When_to_Say_No__Building_a_Disciplined_Product_Vision_at_Scale.pdf",
+    title: "The AI Product-Market Disconnect",
+    description: "How to build AI products people actually need",
+    downloadUrl: "https://assets.ctfassets.net/ozh7tl5h55e7/3UBfHngdXaCvt8n1CnsLUH/8e156b10b0d67b72197e46f04c801d8c/The_Product-Market_Disconnect_-_Whitepaper_.pdf",
     gradientClass: "bg-gradient-to-r from-purple-500 to-cyan-500",
   },
   {
     id: 2,
-    title: "Coming Soon",
+    title: "Building a Disciplined Product Vision at Scale",
     description: "PDF Guide",
-    downloadUrl: "#",
+    downloadUrl: "https://assets.ctfassets.net/ozh7tl5h55e7/SowniJHQdigvHRN4EhECJ/0ad44c50e120c7dff9b8fd3c403b7b69/When_to_Say_No__Building_a_Disciplined_Product_Vision_at_Scale.pdf",
     gradientClass: "bg-gradient-to-r from-purple-500 to-cyan-500",
   },
   {
