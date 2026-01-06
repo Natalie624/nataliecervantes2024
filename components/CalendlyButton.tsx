@@ -24,7 +24,7 @@ declare global {
 export default function CalendlyButton({
   label = 'Contact',
   className = '',
-  url = 'https://calendly.com/natalie-cervantes/one-on-one',
+  url = 'https://calendly.com/natalie-nataliecervantes/one-one-one',
   prefillName,
   prefillEmail,
   disabledWhileLoading = false,

@@ -66,7 +66,7 @@ export default async function Home() {
               Empowering Teams
             </h2>
             <p className="text-gray-200 md:block">
-              Hi! I&apos;m Natalie, Fractional Chief Product Officer. I partner with SaaS leaders to align product strategy with execution, build customer-informed roadmaps, and create the systems that drive predictable delivery.
+              Hi! I&apos;m Natalie, Fractional CPO. I step in when your PM quit, your roadmap&apos;s a mess, and your board is asking questions. I create product strategy that engineering actually executes.
             </p>
 
             {/* Desktop / Tablet Button Row */}
