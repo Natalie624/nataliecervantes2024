@@ -27,9 +27,9 @@ const resources: Resource[] = [
   },
   {
     id: 3,
-    title: "Coming Soon",
+    title: "Case Study: FineTune AI",
     description: "PDF Guide",
-    downloadUrl: "#",
+    downloadUrl: "https://images.ctfassets.net/ozh7tl5h55e7/6xSPTaJPOzDF3Nqyi7hucg/874263c64ebef55ef378eb828bccddee/Case_Study__FineTune_AI_-_From_Reactive_Roadmap_to_Strategic_Product_Engine.pdf",
     gradientClass: "bg-gradient-to-r from-blue-500 to-teal-500",
   },
   {
