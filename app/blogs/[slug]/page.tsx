@@ -3,6 +3,7 @@
 
 import React, { ReactNode, useEffect, useState } from 'react';
 import Script from 'next/script';
+import { useParams } from 'next/navigation';
 import { getEntryBySlug } from '../../utils/contentful';
 import Image from 'next/image';
 import { Node } from '@contentful/rich-text-types';
@@ -33,7 +34,9 @@ interface BlogPostEntry extends EntrySkeletonType {
   readTime: string;
   }
 
-const BlogPost = ({params: {slug}}: {params: {slug: string}}) => {
+const BlogPost = () => {
+  const params = useParams();
+  const slug = params.slug as string;
   const [blogPost, setBlogPost] = useState<BlogPostEntry | null>(null);
   const [loading, setloading] = useState(true);
   const [error, setError] = useState<string | null>(null);

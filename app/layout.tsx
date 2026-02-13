@@ -69,30 +69,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             async
           ></script>
 
-          {/* TODO: bloom.io messenger widget */}
-          <Script id="bloom-widget" strategy="afterInteractive">
-              {`
-                window.bloomSettings = {
-                  userId: "8vk9nv0wx7pe6",
-                  profileId: "l0zdgov3r93go"
-                };
-
-                if (typeof window !== 'undefined' && !window.bloomScriptLoaded) {
-                  window.bloomScriptLoaded = true;
-                  const bloomScript = document.createElement("script");
-                  bloomScript.async = true;
-
-                  fetch("https://code.bloom.io/version?t=" + Date.now())
-                    .then(res => res.text())
-                    .then(version => {
-                      bloomScript.src = "https://code.bloom.io/widget.js?v=" + version;
-                      document.head.appendChild(bloomScript);
-                    })
-                    .catch(err => console.error("Bloom script failed to load:", err));
-                }
-              `}
-            </Script>
-          
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         {/* Google Tag Manager (noscript) */}

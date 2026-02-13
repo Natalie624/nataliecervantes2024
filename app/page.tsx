@@ -66,7 +66,7 @@ export default async function Home() {
               Empowering Teams
             </h2>
             <p className="text-gray-200 md:block">
-              Hi! I&apos;m Natalie, Fractional Head of Product. I help Series A+ founders build product discipline that sticks, combining strategy with engineering fluency.
+              Hi! I&apos;m Natalie, I help Series A/B SaaS companies build product discipline that sticks by bridging strategy and engineering, taking products from idea to impact.
             </p>
 
             {/* Desktop / Tablet Button Row */}
