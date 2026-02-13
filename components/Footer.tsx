@@ -39,7 +39,7 @@ const Footer = () => {
                 </svg>
             </a>
           </div>
-          <p className="text-gray-400 text-[10px] md:text-[8px]">Site designed and developed by Natalie Cervantes ©2025</p>
+          <p className="text-gray-400 text-[10px] md:text-[8px]">Site designed and developed by Natalie Cervantes ©2026</p>
         </div>
 
         {/* Right side: Legal links */}
