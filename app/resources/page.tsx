@@ -34,9 +34,9 @@ const resources: Resource[] = [
   },
   {
     id: 4,
-    title: "Coming Soon",
+    title: "Read The Room: Decoding Your Stakeholders",
     description: "PDF Guide",
-    downloadUrl: "#",
+    downloadUrl: "https://assets.ctfassets.net/ozh7tl5h55e7/3zzI6fMQUk3otECy7P3Fn8/a3b3ac774ce51916da2152a1083f64eb/Read_The_Room_-_Slides.pdf",
     gradientClass: "bg-gradient-to-r from-indigo-500 to-purple-500",
   },
   // Uncomment below to add more resources (up to 8 total)
