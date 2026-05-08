@@ -66,7 +66,7 @@ export default async function Home() {
               Empowering Teams
             </h2>
             <p className="text-gray-200 md:block">
-              Hi! I&apos;m Natalie, I help ambitious teams go from scrappy to scaled by building the product discipline, processes, and culture that create the foundation to grow and evolve.
+              Hi! I&apos;m Natalie, I help ambitious teams go from scrappy to scaled by building the product discipline, processes, and culture that create the foundations needed for success.
             </p>
 
             {/* Desktop / Tablet Button Row */}
